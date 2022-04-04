@@ -1,7 +1,6 @@
 .container {
   width: 100%;
   background: var(--background);
-  position: absolute;
 }
 .content {
   transition: color 2s;
@@ -12,7 +11,7 @@
   margin: 0 auto;
   padding: 0 2rem;
   align-items: center;
-  a {
+  >a {
     padding: 1.688rem 0;
     display: flex;
     justify-content: center;
@@ -46,4 +45,14 @@
   color: var(--white);
   font-size: 2.25rem;
   text-decoration: none;
+}
+.imgBackgound{
+  display: flex;
+  justify-content: center;
+  justify-content: center;
+  overflow: hidden;
+  img{
+    height: 491px;
+    width: 1648px;
+  }
 }

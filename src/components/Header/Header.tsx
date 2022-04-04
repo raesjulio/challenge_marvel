@@ -22,7 +22,7 @@ export const Header = () => {
         </a>
         <button type="button" onClick={handleTeam}>Your Team <img  src={`${group}`} alt="img group" /></button>
       </div>
-      <div>
+      <div className={styles.imgBackgound}>
         <img src={`${backgroud}`} alt="" />
       </div>
     </header>
