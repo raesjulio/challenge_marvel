@@ -1,0 +1,49 @@
+.container {
+  width: 100%;
+  background: var(--background);
+  position: absolute;
+}
+.content {
+  transition: color 2s;
+  display: flex;
+  height: 9.375rem;
+  justify-content: space-between;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  align-items: center;
+  a {
+    padding: 1.688rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    img {
+      width: 3.722rem;
+      height: 4.304rem;
+    }
+  }
+  button {
+    width: 11.188rem;
+    height: 3.688rem;
+    background: var(--red-button);
+    border-radius: 5px 20px;
+    color: var(--white);
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+    border: none;
+    &:hover {
+        filter: brightness(0.7);
+    }
+  }
+}
+.nameMarvel {
+  font-family: "Roboto", sans-serif;
+  color: var(--white);
+  font-size: 2.25rem;
+  text-decoration: none;
+}
