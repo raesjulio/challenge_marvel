@@ -1,0 +1,33 @@
+.containerFooter{
+  margin-top: 9.188rem;
+  background: var(--background);
+  padding: 0 2rem;
+  width: 100%;
+
+ >div{
+   max-width: 1172px;
+   margin: auto;
+   padding: 0 2rem;
+  >section{
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5.125rem;
+    >div{
+      a{
+        font-size: 1.25rem;
+        line-height: 1.465rem;
+      }
+    }
+    h3{
+      color: var(--white);
+      line-height: 1.438rem;
+      a{
+        font-weight: 400;
+        filter: brightness(0.5);
+      }
+    }
+  }
+ }
+}

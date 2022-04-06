@@ -1,0 +1,88 @@
+
+.card {
+  width: 15.875rem;
+  height: 23.5rem;
+  overflow: hidden;
+  background: var(--white);
+  box-shadow: 0px 4px 4px #00000040;
+  border-radius: 10px 30px;
+  transition: color 2s;
+  cursor: pointer;
+  &:hover{
+    filter: brightness(0.9)
+  }
+  >aside{
+    height: 12.425rem;
+    overflow: hidden;
+    >img{
+      width: 100%;
+    }
+  }
+  >div{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -1rem;
+    align-items: center;
+    padding: 1rem;
+    margin-right: -0.625rem;
+
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    button{
+      width: 3.375rem;
+      height: 3.376rem;
+      border: none;
+      position: absolute;
+      box-sizing: border-box;
+      cursor: pointer;
+      display: inline-flex;
+      justify-content: center;
+      box-shadow: 0px 4px 4px 0px #00000040;
+      align-items: center;
+      border-radius: 50%;
+    }
+  }
+  >section{
+    // padding: 0 1.875rem;
+    padding-left: 1.688rem;
+    padding-right: 2.063rem;
+    margin-top: .4rem;
+    >h1{
+     
+      font-size: 2rem;
+      margin-bottom:0.856rem ;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+    }
+    >span{
+      font-weight: 400;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+  }
+}
+
+.containerCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contentCard {
+  display: grid;
+  gap: 1.875rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  @media (max-width: 1220px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  @media (max-width: 870px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: 555px) {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,9 +1,10 @@
-import React from 'react'
+import { Results } from "../../components/Results/Results"
+import { Search } from "../../components/Search/Search"
 
 export const Home = () => {
-  return (
-    <div>
-      <h1>Julio</h1>
-    </div>
+  return (<main>
+    <Search/>
+    <Results/>
+  </main>
   )
 }
