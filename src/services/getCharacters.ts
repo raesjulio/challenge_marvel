@@ -15,6 +15,8 @@ const getCharacters = () => {
   const API_KEY_SECRET = "d2c50c3e53e831d9a9330f7c535fe56501ab3f78"
   const hash = MD5(`${ts}${API_KEY_SECRET}${API_KEY_PUBLIC}`).toString()
   const link = `http://gateway.marvel.com/v1/public/characters?ts=${ts}&apikey=${API_KEY_PUBLIC}&hash=${hash}`
+  console.log(link);
+  
   return axios.get(link).then(res => res.data)
 }
 
