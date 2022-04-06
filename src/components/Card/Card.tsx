@@ -31,7 +31,7 @@ export const Card = () => {
     const [allCharacters, setAllCharacters] = useState<ICharacters[]>([])
     const data = queryClient.getQueriesData("charactersList") as ICharactersResponse
     const { team, setTeam } = useData()
-    console.log(allCharacters);
+
 
     useEffect(() => {
         if (data) {
