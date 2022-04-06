@@ -1,0 +1,39 @@
+
+.imgCharacter {
+  border-radius: 50%;
+  overflow: hidden;
+  max-width: 12.5rem;
+  max-height: 11.75rem;
+  > img {
+    width: 100%;
+  }
+}
+.infoCharacter {
+  max-width: 42.5rem;
+  padding-left: 2.5rem;
+  color: var(--black-text);
+  h1 {
+    font-size: 2.625rem;
+    font-weight: 700;
+    line-height: 3rem;
+    margin-bottom: 1.25rem;
+  }
+  span {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+  }
+  @media (max-width: 780px) {
+    padding-left: 0;
+
+    h1 {
+      margin-top: 1rem;
+      text-align: center;
+    }
+    span {
+      align-items: center;
+    }
+  }
+}
+

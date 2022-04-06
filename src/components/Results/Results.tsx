@@ -38,11 +38,7 @@ export const Results = () => {
     <div className={styles.containerResults}>
       {!isFetching ? <>
         <div><h1>characters</h1> <h3># results</h3></div>
-        <section className={styles.containerCard}>
-          <div className={styles.contentCard}>
             <Card allCharacters={allCharacters}/>
-          </div>
-        </section>
       </>: <div>Carregando</div>}
     </div>
     // <div>Results</div>

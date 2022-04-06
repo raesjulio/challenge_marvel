@@ -23,6 +23,8 @@ export const getCharacter = (id: string) => {
     if (id==="") {
         return
     }
-  const { data, isFetching } = useQuery<ICharactersResponse>(`${id}`, ()=>getCharacters(id))
+  const { data, isFetching } = useQuery<ICharactersResponse>(`${id}`, ()=>getCharacters(id), {
+    staleTime:1*24*60*60*1000 // 1 dia
+  })
   return { data, isFetching }
 }
