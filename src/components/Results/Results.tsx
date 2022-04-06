@@ -26,16 +26,21 @@ interface ICharacters {
 }
 export const Results = () => {
   const [allCharacters, setAllCharacters] = useState<ICharacters[]>([])
-  const {data, isFetching} = getCharactersAll()
- 
+  const { data, isFetching } = getCharactersAll()
 
+  useEffect(() => {
+    if (data) {
+      let results = data.data.results as ICharacters[]
+      setAllCharacters(results)
+    }
+  }, [data])
 
   return (
     <div className={styles.containerResults}>
       {!isFetching ? <>
         <div><h1>characters</h1> <h3># results</h3></div>
-            <Card/>
-      </>: <div>Carregando</div>}
+        <Card allCharacters={allCharacters} />
+      </> : <div>Carregando</div>}
     </div>
     // <div>Results</div>
   )

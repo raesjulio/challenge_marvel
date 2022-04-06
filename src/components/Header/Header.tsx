@@ -15,7 +15,7 @@ export const Header = () => {
   return (
     <header className={styles.container}>
       <div className={styles.content}>
-        <a href="" onClick={handleHome}>
+        <a onClick={handleHome}>
           <img src={`${logo}`} alt="image logo ironman" />
           <h1 className={styles.nameMarvel}>Marvel Strike Team</h1>
         </a>

@@ -24,5 +24,7 @@ export const getCharactersAll = () => {
   const { data, isFetching } = useQuery<ICharactersResponse>("charactersList", getCharacters,{
     staleTime:1*24*60*60*1000 // 1 dia
   })
+  console.log(data);
+  
   return { data, isFetching }
 }

@@ -39,6 +39,13 @@
       box-shadow: 0px 4px 4px 0px #00000040;
       align-items: center;
       border-radius: 50%;
+      &.select{
+        background: var(--red-button);
+        img{
+
+          color: var(--white);
+        }
+      }
     }
   }
   >section{
