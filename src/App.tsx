@@ -3,6 +3,7 @@ import { FooterPage } from './components/FooterPage/FooterPage'
 import { Header } from './components/Header/Header'
 import { Character } from './pages/Character/Character'
 import { Home } from './pages/Home/Home'
+import Search from './pages/Search/Search'
 import { Team } from './pages/Team/Team'
 import "./styles/global.scss"
 
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/yourteam" element={<Team />} />
         <Route path="/character/:id" element={<Character />} />
+        <Route path="/search/:search" element={<Search />} />
       </Routes>
       <FooterPage/>
   </>

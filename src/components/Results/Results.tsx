@@ -8,6 +8,8 @@ import styles from "./styles.module.scss"
 
 import { getCharactersAll } from "../../services/getCharacters"
 import { Card } from "../Card/Card"
+import { ErrorComponet } from "../ErrorComponet/ErrorComponet"
+import { Spinner } from "../Spinner/Spinner"
 interface ICharactersResponse {
   data: {
     results: []
@@ -26,7 +28,7 @@ interface ICharacters {
 }
 export const Results = () => {
   const [allCharacters, setAllCharacters] = useState<ICharacters[]>([])
-  const { data, isFetching } = getCharactersAll()
+  const { data, isFetching,error } = getCharactersAll()
 
   useEffect(() => {
     if (data) {
@@ -40,7 +42,8 @@ export const Results = () => {
       {!isFetching ? <>
         <div><h1>characters</h1> <h3># results</h3></div>
         <Card allCharacters={allCharacters} />
-      </> : <div>Carregando</div>}
+      </> : <Spinner />}
+      {error && <ErrorComponet />}
     </div>
     // <div>Results</div>
   )

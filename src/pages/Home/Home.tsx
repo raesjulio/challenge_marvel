@@ -1,9 +1,10 @@
 import { Results } from "../../components/Results/Results"
-import { Search } from "../../components/Search/Search"
+import { SearchComponent } from "../../components/SearchComponent/SearchComponent"
+
 
 export const Home = () => {
   return (<main>
-    <Search/>
+    <SearchComponent/>
     <Results/>
   </main>
   )

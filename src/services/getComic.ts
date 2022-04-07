@@ -20,11 +20,11 @@ const getComic = (id: string) => {
 
 
 export const getComicAll = (id: string) => {
-    if (id==="") {
-        return
-    }
-  const { data, isFetching } = useQuery<ICharactersResponse>(`comic${id}`, ()=>getComic(id), {
+  if (id === "") {
+    return { error: true }
+  }
+  const { data, isFetching, error } = useQuery<ICharactersResponse>(`comic${id}`, () => getComic(id), {
     staleTime: 1 * 24 * 60 * 60 * 1000 // 1 dia
   })
-  return { data, isFetching }
+  return { data, isFetching, error }
 }
