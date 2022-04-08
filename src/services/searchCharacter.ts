@@ -1,12 +1,7 @@
 import axios from "axios"
 import { MD5 } from "crypto-js"
 import { useQuery } from "react-query"
-interface ICharactersResponse {
-    attributionHTML: string
-    data: {
-      results: []
-    }
-  }
+import { ICharactersResponse } from "../interfaces/interfaces"
 
 
  const getSearch = async(name: string) => {

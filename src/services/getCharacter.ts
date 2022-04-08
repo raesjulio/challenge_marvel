@@ -1,13 +1,8 @@
 import axios from "axios"
 import { MD5 } from "crypto-js"
 import { useQuery } from "react-query"
+import { ICharactersResponse } from "../interfaces/interfaces"
 
-interface ICharactersResponse {
-  attributionHTML: string
-  data: {
-    results: []
-  }
-}
 
 const getCharacters = (id: string) => {
   const ts = Math.floor(Date.now() / 1000)

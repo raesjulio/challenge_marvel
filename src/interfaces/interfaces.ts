@@ -8,3 +8,14 @@ export interface ICharacters {
     }
     select?: boolean
   }
+
+
+ export interface ICharactersResponse {
+  attributionHTML: string
+  data: {
+    results: []
+    offset: String
+    total:String
+    limit: String
+  }
+}
