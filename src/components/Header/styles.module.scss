@@ -23,23 +23,29 @@
       height: 4.304rem;
     }
   }
-  button {
-    width: 11.188rem;
-    height: 3.688rem;
-    background: var(--red-button);
-    border-radius: 5px 20px;
-    color: var(--white);
-    font-size: 1.5rem;
-    display: flex;
-    justify-content: center;
+  >div{
+    display: inline-flex;
+    gap: 2rem;
     align-items: center;
-    gap: 0.4rem;
-    cursor: pointer;
-    border: none;
-    &:hover {
-      filter: brightness(0.7);
+    >button {
+      width: 11.188rem;
+      height: 3.688rem;
+      background: var(--red-button);
+      border-radius: 5px 20px;
+      color: var(--white);
+      font-size: 1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.4rem;
+      cursor: pointer;
+      border: none;
+      &:hover {
+        filter: brightness(0.7);
+      }
     }
   }
+ 
 }
 .nameMarvel {
   font-family: "Roboto", sans-serif;

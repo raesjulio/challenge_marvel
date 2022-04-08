@@ -1,0 +1,24 @@
+.container {
+  > button {
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    &:hover{
+      filter: brightness(0.8);
+    }
+    img {
+      width: 3.8rem;
+    }
+    label {
+      padding: 0.24rem;
+      border-radius: 0.24rem;
+      font-size: 1rem;
+      color: var(--white);
+      background: -webkit-linear-gradient(left, #e5771b, #753d16);
+    }
+  }
+}

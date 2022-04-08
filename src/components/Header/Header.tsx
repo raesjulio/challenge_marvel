@@ -1,8 +1,10 @@
-// import logoMarvel from "../../assets/logo.svg"
+
 import logo from "../../assets/icons/logo.svg"
 import group from "../../assets/icons/group.svg"
 import styles from "./styles.module.scss"
+
 import { useNavigate } from "react-router-dom"
+import MetaMaskAuth from "../MetaMask/MetaMaskAuth"
 
 export const Header = () => {
   let navigate = useNavigate();
@@ -19,7 +21,10 @@ export const Header = () => {
           <img src={`${logo}`} alt="image logo ironman" />
           <h1 className={styles.nameMarvel}>Marvel Strike Team</h1>
         </a>
+       <div>
+         <MetaMaskAuth onAddressChanged={() => {}}/>
         <button type="button" onClick={handleTeam}>Your Team <img src={`${group}`} alt="img group" /></button>
+       </div>
       </div>
       <div className={styles.imgBackgound}>
       </div>
