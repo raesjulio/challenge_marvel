@@ -1,0 +1,52 @@
+.containerResults {
+  margin: auto;
+  position: relative;
+  max-width: 1172px;
+  padding: 0 2rem;
+  margin-top: 8.7rem;
+  @media (max-width: 1100px){
+  margin-top: 10.7rem;
+
+  }
+  > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 2.125rem;
+    padding-top: 2.5rem;
+    h1 {
+      text-transform: capitalize;
+      font-size: 2.625rem;
+      line-height: 3.076rem;
+      font-weight: 700;
+
+    }
+    h3 {
+      // color: black;
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 1.758rem;
+     padding-right: 2rem;
+    }
+  }
+}
+
+.containerCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contentCard {
+  display: grid;
+  gap: 1.875rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  @media(max-width: 1220px){
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  @media(max-width: 870px){
+    grid-template-columns: 1fr 1fr;
+  }
+  @media(max-width: 555px){
+    grid-template-columns: 1fr;
+  }
+}

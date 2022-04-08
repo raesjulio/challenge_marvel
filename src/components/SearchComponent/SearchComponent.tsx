@@ -14,15 +14,10 @@ interface ICharactersResponse {
 import styles from "./styles.module.scss"
 export const SearchComponent = () => {
   const [valueInput, setValueInput] = useState("")
- const navigate =useNavigate()
+  const navigate = useNavigate()
   const handleSearch = async () => {
-    // console.log(await getSearch(valueInput));
     navigate(`/search/${valueInput}`)
   }
-
-
-
-
 
 
   return (

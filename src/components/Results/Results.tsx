@@ -1,35 +1,29 @@
 
 import { useEffect, useState } from "react"
-import { useQuery } from "react-query"
-
-import favicon from "../../assets/icons/favicon.svg"
-
-import styles from "./styles.module.scss"
 
 import { getCharactersAll } from "../../services/getCharacters"
 import { Card } from "../Card/Card"
 import { ErrorComponet } from "../ErrorComponet/ErrorComponet"
 import { Spinner } from "../Spinner/Spinner"
-interface ICharactersResponse {
-  data: {
-    results: []
-  }
-}
 
-interface ICharacters {
-  id: string
-  name: string
-  description: string
-  thumbnail: {
-    extension: string
-    path: string
-  }
-  select?: boolean
-}
+import UsePagination from "../pagination";
+import { ICharacters } from "../../interfaces/interfaces"
+
+import styles from "./styles.module.scss"
+
 export const Results = () => {
   const [allCharacters, setAllCharacters] = useState<ICharacters[]>([])
-  const { data, isFetching,error } = getCharactersAll()
+  const [itemsPagination, setItemsPagination] = useState(0)
+ 
+  const { data, isFetching, error } = getCharactersAll()
 
+  useEffect(() => {
+    if (data) {
+      const limit = parseInt(data.data.limit.toString())
+      
+      setItemsPagination(limit)
+    }
+  }, [data])
   useEffect(() => {
     if (data) {
       let results = data.data.results as ICharacters[]
@@ -37,14 +31,17 @@ export const Results = () => {
     }
   }, [data])
 
+
   return (
     <div className={styles.containerResults}>
       {!isFetching ? <>
         <div><h1>characters</h1> <h3># results</h3></div>
         <Card allCharacters={allCharacters} />
+        <UsePagination itemsPagination={itemsPagination} />
+
       </> : <Spinner />}
       {error && <ErrorComponet />}
     </div>
-    // <div>Results</div>
   )
 }
+

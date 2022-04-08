@@ -24,14 +24,18 @@ type Props = {
 interface IContextValue {
     team: ICharacters[];
     setTeam: Dispatch<SetStateAction<ICharacters[]>>;
+    valuePage: string
+    setValuePage: Dispatch<SetStateAction<string>>;
 }
+
 const Context = createContext<IContextValue>({} as IContextValue);
 
 export const DataProvider = ({ children }: Props) => {
 
     const [team, setTeam] = useState<ICharacters[]>([])
+    const [valuePage, setValuePage] = useState("1")
     return (
-        <Context.Provider value={{ team, setTeam }}>
+        <Context.Provider value={{ team, setTeam, valuePage, setValuePage}}>
             {children}
         </Context.Provider>
     )

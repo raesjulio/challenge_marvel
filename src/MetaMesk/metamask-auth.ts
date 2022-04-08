@@ -2,6 +2,10 @@
 export function isMobileDevice() {
   return 'ontouchstart' in window || 'onmsgesturechange' in window;
 }
+interface RequestArguments {
+  method: string;
+  params?: unknown[] | object;
+}
 
 export async function connect(onConnected : React.Dispatch<React.SetStateAction<string>> ) {
   if (!window.ethereum) {

@@ -6,9 +6,11 @@ import App from './App'
 import { DataProvider } from './hooks/useData'
 import { queryClient } from './services/queryClient'
 
+
+
 ReactDOM.render(
   <React.StrictMode>
-    <DataProvider>
+    <DataProvider> 
       <BrowserRouter>
         <QueryClientProvider client={queryClient}>
           <App />

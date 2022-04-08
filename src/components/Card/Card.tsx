@@ -16,6 +16,7 @@ type TCharacterList = {
         results: [ICharacters]
     }
 }
+import usePagination from "@mui/material/usePagination/usePagination"
 import { useState } from "react"
 import { QueryKey } from "react-query"
 import { useNavigate } from "react-router-dom"
@@ -28,8 +29,8 @@ import styles from "./styles.module.scss"
 export const Card = ({ allCharacters }: Props) => {
     const navigate = useNavigate()
     const [valueButton, setValueButton] = useState<Number[]>([])
-
-
+    const {valuePage} = useData()
+    
     const { team, setTeam } = useData()
     const handleClick = (item: ICharacters) => {
         const existCharacter = team.some(ev => {
@@ -38,8 +39,7 @@ export const Card = ({ allCharacters }: Props) => {
             }
         })
         if (existCharacter) {
-            //remove do array
-            const previsions = queryClient.getQueryData<TCharacterList>("charactersList")
+            const previsions = queryClient.getQueryData<TCharacterList>(`charactersList${valuePage}`)
 
             if (previsions) {
                 const {results} = previsions.data
@@ -56,15 +56,13 @@ export const Card = ({ allCharacters }: Props) => {
                         results: nextCharactersList
                     }
                 }
-                queryClient.setQueryData("charactersList",data )
+                queryClient.setQueryData(`charactersList${valuePage}`,data )
             }
             const newArray = team.filter(ev => {
                 if (ev.id !== item.id) {
                     return item
                 }
             })
-            console.log(newArray);
-
             setTeam(newArray)
             return
         } else {
