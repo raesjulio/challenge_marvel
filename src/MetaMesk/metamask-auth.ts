@@ -2,10 +2,19 @@
 export function isMobileDevice() {
   return 'ontouchstart' in window || 'onmsgesturechange' in window;
 }
-interface RequestArguments {
-  method: string;
-  params?: unknown[] | object;
-}
+
+import { MetaMaskInpageProvider } from '@metamask/providers';
+import { IAcount } from '../interfaces/interfaces';
+
+
+declare global {
+  interface Window {
+    ethereum: MetaMaskInpageProvider;
+  }
+} 
+
+const { ethereum } = window;
+
 
 export async function connect(onConnected : React.Dispatch<React.SetStateAction<string>> ) {
   if (!window.ethereum) {
@@ -13,11 +22,12 @@ export async function connect(onConnected : React.Dispatch<React.SetStateAction<
     return;
   }
 
-  const accounts = await window.ethereum.request({
+  const accounts  = await window.ethereum.request({
     method: "eth_requestAccounts",
   });
-
-  onConnected(accounts[0]);
+  const acc = accounts as IAcount
+  
+  onConnected(acc[0]);
 }
 
 export async function checkIfWalletIsConnected(onConnected: React.Dispatch<React.SetStateAction<string>>) {
@@ -25,9 +35,9 @@ export async function checkIfWalletIsConnected(onConnected: React.Dispatch<React
     const accounts = await window.ethereum.request({
       method: "eth_accounts",
     });
-
-    if (accounts.length > 0) {
-      const account = accounts[0];
+    const acc = accounts as IAcount
+    if (acc.length > 0) {
+      const account = acc[0];
       onConnected(account);
       return;
     }

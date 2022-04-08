@@ -1,27 +1,15 @@
-interface ICharacters {
-    id: string
-    name: string
-    description: string
-    thumbnail: {
-        extension: string
-        path: string
-    }
-    select?: boolean
-}
+
 type Props = {
     allCharacters: ICharacters[]
 };
-type TCharacterList = {
-    data:{
-        results: [ICharacters]
-    }
-}
+
 import usePagination from "@mui/material/usePagination/usePagination"
 import { useState } from "react"
 import { QueryKey } from "react-query"
 import { useNavigate } from "react-router-dom"
 import favicon from "../../assets/icons/favicon.svg"
 import { useData } from "../../hooks/useData"
+import { ICharacters, TCharacterList } from "../../interfaces/interfaces";
 import { queryClient } from "../../services/queryClient"
 
 import styles from "./styles.module.scss"
@@ -50,7 +38,7 @@ export const Card = ({ allCharacters }: Props) => {
                         return ev
                     }
                 })
-                console.log(nextCharactersList);
+                
                 const data ={
                     ...previsions, data: {
                         results: nextCharactersList
@@ -68,7 +56,6 @@ export const Card = ({ allCharacters }: Props) => {
         } else {
             let newItem = item
             newItem.select = true
-            console.log(newItem);
 
             setTeam([...team, newItem])
         }

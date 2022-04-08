@@ -2,39 +2,14 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import view from "../../assets/icons/view.svg"
+import { IComic, IGetComic } from "../../interfaces/interfaces"
 import { getComicAll } from "../../services/getComic"
 import { ErrorComponet } from "../ErrorComponet/ErrorComponet"
 import { Spinner } from "../Spinner/Spinner"
 import styles from "./styles.module.scss"
-interface IComic {
-    id: string
-    description: string
-    title: string
-    pageCount: Number
-    dates: [{
-        date: string
-        type: string
-    }]
-    prices: [{
-        type: string
-        price: string
-    }]
-    thumbnail: {
-        extension: string
-        path: string
-    }
-}
-interface ICharactersResponse {
-    attributionHTML: string
-    data: {
-        results: []
-    }
-}
-interface IGetComic {
-    data: ICharactersResponse | undefined;
-    isFetching: boolean;
-    error: boolean
-}
+
+
+
 
 export const CardComics = () => {
     let { id } = useParams()
