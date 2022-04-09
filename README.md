@@ -6,11 +6,11 @@
 # Descrição
 [Marvel Personagens](https://challenge-marvel.vercel.app/) é uma aplicação que realiza consultas, faz o consumo da API da Marvel e realiza login com [MetaMesk](https://docs.metamask.io/guide/#why-metamask)
 
-Aplicação possui em sua  **HOME** a listagem dos personagens em ordem alfabetica, um campo de pequisa e o botão de favoritar os personagens em seu card. Ao  clicar em um dos cards é  direcionado ao perfil do personagem com sua imagem, nome, decrição e os quadrinhos que o personagem faz parte. Ao ir para seus personagens selecionados é listados a equipe que selecionou
+Aplicação possui em sua  **HOME** a listagem dos personagens em ordem alfabética, um campo de pequisa e o botão de favoritar os personagens em seu card. Ao  clicar em um dos cards é  direcionado ao perfil do personagem com sua imagem, nome, descrição e os quadrinhos que o personagem faz parte. Ao ir para seus personagens selecionados é listados a equipe que selecionou
 
 # Instalação
 
-Instação das dependencias
+Instalação das dependências
 ```
 yarn install
 ```
@@ -20,13 +20,13 @@ yarn install
 * [ReactJs](https://pt-br.reactjs.org/);
 * [ReactQuery](https://react-query.tanstack.com/);
 * [Sass](https://sass-lang.com/);
-* [Matiral UI](https://mui.com/pt/);
+* [Material UI](https://mui.com/pt/);
 
 
 # Api Marvel
 `https://developer.marvel.com`
 
-# Api Varvel Variaveis
+# Api Marvel Variáveis
 Crie um arquivo `.env` com `VITE_API_KEY_SECRET` e `VITE_API_KEY_PUBLIC`
 
 # Desenvolvimento
