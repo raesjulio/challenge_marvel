@@ -4,19 +4,11 @@ import { Card } from '../../components/Card/Card';
 import { ErrorComponet } from '../../components/ErrorComponet/ErrorComponet';
 import { SearchComponent } from '../../components/SearchComponent/SearchComponent';
 import { Spinner } from '../../components/Spinner/Spinner';
+import { ICharacters } from '../../interfaces/interfaces';
 import { getSearchCharacter } from '../../services/searchCharacter';
 import styles from "./styles.module.scss"
 
-interface ICharacters {
-    id: string
-    name: string
-    description: string
-    thumbnail: {
-        extension: string
-        path: string
-    }
-    select?: boolean
-}
+
 const Search = () => {
     const [allCharacters, setAllCharacters] = useState<ICharacters[]>([])
     let { search } = useParams()
@@ -28,8 +20,7 @@ const Search = () => {
             setAllCharacters(results)
         }
     }, [data])
-    console.log(data);
-
+    
     return (
         <main>
             <SearchComponent />

@@ -1,15 +1,8 @@
-import axios from "axios"
-import { MD5 } from "crypto-js"
-import { useEffect, useState } from "react"
-import { useQuery } from "react-query"
+
+import { useState } from "react"
+
 import { useNavigate } from "react-router-dom"
 import search from "../../assets/icons/search.svg"
-interface ICharactersResponse {
-  attributionHTML: string
-  data: {
-    results: []
-  }
-}
 
 import styles from "./styles.module.scss"
 export const SearchComponent = () => {
@@ -18,8 +11,6 @@ export const SearchComponent = () => {
   const handleSearch = async () => {
     navigate(`/search/${valueInput}`)
   }
-
-
   return (
     <>
       <div className={styles.containerSearch}>

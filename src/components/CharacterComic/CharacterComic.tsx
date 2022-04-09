@@ -1,32 +1,15 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import { ICharacters, IGetComic } from "../../interfaces/interfaces"
 import { getCharacter } from "../../services/getCharacter"
+import { ErrorComponet } from "../ErrorComponet/ErrorComponet"
 import { Spinner } from "../Spinner/Spinner"
 import styles from "./styles.module.scss"
 
-interface ICharacters {
-    id: string
-    name: string
-    description: string
-    thumbnail: {
-        extension: string
-        path: string
-    }
-}
-interface ICharactersResponse {
-    attributionHTML: string
-    data: {
-        results: []
-    }
-}
-interface IGetComic {
-    data: ICharactersResponse | undefined;
-    isFetching: boolean;
-}
 export const CharacterComic = () => {
     const [character, setCharacter] = useState<ICharacters[]>([])
     let { id } = useParams()
-    const { data: dataCharacter, isFetching: isFetchingCharacter } = getCharacter(id ? id : "") as IGetComic
+    const { data: dataCharacter, isFetching: isFetchingCharacter, error } = getCharacter(id ? id : "") as IGetComic
 
     useEffect(() => {
         if (dataCharacter) {
@@ -50,6 +33,7 @@ export const CharacterComic = () => {
                     </section>
                 })}
             </>}
+            {error && <ErrorComponet />}
         </>
     )
 }

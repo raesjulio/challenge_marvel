@@ -6,11 +6,7 @@ interface IUserAddress {
   userAddress: string
 }
 
-interface ProviderRpcError extends Error {
-  message: string;
-  code: number;
-  data?: unknown;
-}
+
 export const Address = ({ userAddress }: IUserAddress) => {
 
   const disconnect = async () => {

@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react"
 import { getCharactersAll } from "../../services/getCharacters"
 import styles from "./styles.module.scss"
-interface IData {
-  attributionHTML: string
-}
+
 export const FooterPage = () => {
   const { data, isFetching } = getCharactersAll()
   const [copyright, setCopyright] = useState(data?.attributionHTML)

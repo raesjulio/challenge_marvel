@@ -2,9 +2,9 @@
 import styles from "./styles.module.scss"
 import returnIcon from "../../assets/icons/return.svg"
 interface IProps {
-text:String
+    text: String
 }
-export const ReturnPage = ({text}:IProps) => {
+export const ReturnPage = ({ text }: IProps) => {
     const handleBack = () => {
         return window.history.back()
     }
