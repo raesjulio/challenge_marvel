@@ -39,4 +39,4 @@ yarn dev
 
 https://challenge-marvel.vercel.app/
 
-[](https://github.com/raesjulio/challenge_marvel/blob/a65efb751e5b12ea7acf212c1fc53645f4af19ea/imageGit/home.png)
+![alt_txt](https://github.com/raesjulio/challenge_marvel/blob/a65efb751e5b12ea7acf212c1fc53645f4af19ea/imageGit/home.png)
