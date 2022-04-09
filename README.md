@@ -1,4 +1,4 @@
-# Marvel Personagens 
+# Marvel Personagens client-side
 * **Front-end**: React + Vite
 * **Hosting**: Vercel
 
