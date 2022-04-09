@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from "react"
+
 export interface ICharacters {
     id: string
     name: string
@@ -57,4 +59,10 @@ export interface IGetComic {
   data: ICharactersResponse | undefined;
   isFetching: boolean;
   error: boolean
+}
+export interface IContextValue {
+  team: ICharacters[];
+  setTeam: Dispatch<SetStateAction<ICharacters[]>>;
+  valuePage: string
+  setValuePage: Dispatch<SetStateAction<string>>;
 }
