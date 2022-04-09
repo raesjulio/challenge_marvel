@@ -1,7 +1,7 @@
 import styles from "./styles.module.scss"
 import metamask from "../../../assets/icons/metamask-fox.svg"
 
-import { connect, isMobileDevice } from "../../../MetaMesk/metamask-auth";
+import { connect, isMobileDevice } from "../../../metamesk/metamask-auth";
 interface ISetUser{
   setUserAddress: React.Dispatch<React.SetStateAction<string>>
 }

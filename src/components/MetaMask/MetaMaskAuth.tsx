@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { ButtonMetaMesk } from "./ButtonMetaMesk/ButtonMetaMesk";
 
 import { Address } from "./Adress/Address";
-import { checkIfWalletIsConnected } from "../../MetaMesk/metamask-auth";
+import { checkIfWalletIsConnected } from "../../metamesk/metamask-auth";
 type Iprops = {
   onAddressChanged: any
 }

@@ -18,7 +18,6 @@ export const getSearchCharacter = (name: string| undefined) => {
     const { data, isFetching, error } = useQuery<ICharactersResponse>(`search${name}`, () => getSearch(name), {
         staleTime: 1 * 24 * 60 * 60 * 1000 // 1 dia
     })
-    console.log(error);
-
+    
     return { data, isFetching }
 }
