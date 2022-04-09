@@ -6,20 +6,18 @@ import { ICharactersResponse } from "../interfaces/interfaces"
 
 const getCharacters = (id: string) => {
   const ts = Math.floor(Date.now() / 1000)
-  const API_KEY_PUBLIC = "5024e4bcacc6dcbfa3eca064563570f2"
-  const API_KEY_SECRET = "d2c50c3e53e831d9a9330f7c535fe56501ab3f78"
-  const hash = MD5(`${ts}${API_KEY_SECRET}${API_KEY_PUBLIC}`).toString()
-
-  return axios.get(`https://gateway.marvel.com/v1/public/characters/${id}?ts=${ts}&apikey=${API_KEY_PUBLIC}&hash=${hash}`).then(res => res.data)
+  const hash = MD5(`${ts}${import.meta.env.VITE_API_KEY_SECRET}${import.meta.env.VITE_API_KEY_PUBLIC}`).toString()
+  const link = `https://gateway.marvel.com/v1/public/characters/${id}?ts=${ts}&apikey=${import.meta.env.VITE_API_KEY_PUBLIC}&hash=${hash}`
+  return axios.get(link).then(res => res.data)
 }
 
 
 export const getCharacter = (id: string) => {
-    if (id==="") {
-        return
-    }
-  const { data, isFetching } = useQuery<ICharactersResponse>(`${id}`, ()=>getCharacters(id), {
-    staleTime:1*24*60*60*1000 // 1 dia
+  if (id === "") {
+    return
+  }
+  const { data, isFetching, error } = useQuery<ICharactersResponse>(`${id}`, () => getCharacters(id), {
+    staleTime: 1 * 24 * 60 * 60 * 1000 // 1 dia
   })
-  return { data, isFetching }
+  return { data, isFetching, error }
 }
