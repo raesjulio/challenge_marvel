@@ -8,7 +8,8 @@ import styles from "./styles.module.scss"
 export const SearchComponent = () => {
   const [valueInput, setValueInput] = useState("")
   const navigate = useNavigate()
-  const handleSearch = async () => {
+  const handleSearch = async (e:React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
     navigate(`/search/${valueInput}`)
   }
   return (
@@ -18,14 +19,16 @@ export const SearchComponent = () => {
           <div>
             <h1>Explore the most powerful characters in Marvel</h1>
           </div>
-          <div className={styles.search}>
+       <form onSubmit={(e)=>handleSearch(e)}>
+       <div className={styles.search}>
             <input
               value={valueInput}
               onChange={(e) => setValueInput(e.target.value)}
               type="text"
               placeholder="Type in a characters name" />
-            <button onClick={handleSearch}><img src={`${search}`} alt="icon search" /></button>
+            <button type="submit" ><img src={`${search}`} alt="icon search" /></button>
           </div>
+       </form>
         </div>
       </div>
 

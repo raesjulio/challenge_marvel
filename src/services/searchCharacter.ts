@@ -7,7 +7,7 @@ import { ICharactersResponse } from "../interfaces/interfaces"
  const getSearch = async(name: string) => {
     const ts = Math.floor(Date.now() / 1000)
     const hash = MD5(`${ts}${import.meta.env.VITE_API_KEY_SECRET}${import.meta.env.VITE_API_KEY_PUBLIC}`).toString()
-    const link = `https://gateway.marvel.com/v1/public/characters?nameStartsWith=${name}&ts=${ts}&apikey=${import.meta.env.VITE_API_KEY_SECRET}&hash=${hash}`
+    const link = `https://gateway.marvel.com/v1/public/characters?nameStartsWith=${name}&ts=${ts}&apikey=${import.meta.env.VITE_API_KEY_PUBLIC}&hash=${hash}`
     return await axios.get(link).then(res => res.data)
 }
 
