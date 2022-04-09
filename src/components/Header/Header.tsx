@@ -16,7 +16,7 @@ export const Header = () => {
   }
   return (
     <header className={styles.container}>
-      <div className={styles.content}>
+      <nav className={styles.content}>
         <a onClick={handleHome}>
           <img src={`${logo}`} alt="image logo ironman" />
           <h1 className={styles.nameMarvel}>Marvel Strike Team</h1>
@@ -25,7 +25,7 @@ export const Header = () => {
          <MetaMaskAuth onAddressChanged={() => {}}/>
         <button type="button" onClick={handleTeam}>Your Team <img src={`${group}`} alt="img group" /></button>
        </div>
-      </div>
+      </nav>
       <div className={styles.imgBackgound}>
       </div>
     </header>
